@@ -4,6 +4,11 @@ services:
     build: .
     volumes:
       - .:/code
+    environment:
+      - SECRET_KEY=%#l%d+#58)%#d1oopq3l=xf_&x+w98-t$)p1l11nav@kdgu&2k
+      - DEBUG=True
+      - STRIPE_PUBLIC_KEY=pk_test_51LrFbSAKDXn8icjFp0ey8Ji8imSPcER1Gr6dNihiqrt7WvdXF98y8f8DwOHgKdGAFCIRJlFr52KnlCyzfPvOQljX00ZtWh74Gd
+      - STRIPE_SECRET_KEY=sk_test_51LrFbSAKDXn8icjFLc1Wtc2GtYAbmbAW983SlLMcVUjbtTDfrxPoxdoqF7iyWBHAjJ5FujiGcR46adb3B1IvDBhF00gkfc8O7r
     env_file:
       - ./config/.env
   web_migrate:
