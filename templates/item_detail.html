@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Buy {{ product.name }}</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="container mt-3 pb-5">
+    <section>
+        <div class="product">
+            <div class="description">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <hr />
+                {% for price in prices %}
+
+                <div>
+                    <h5>${{ price.get_display_price }}</h5>
+                    
+                    <form action="{% url 'buy-item-session' price.id %}" method="POST">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" type="submit" style="width: 100px;">Buy</button>
+                    </form>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    </main>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
