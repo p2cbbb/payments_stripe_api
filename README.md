@@ -1,4 +1,5 @@
 # Тестовое задание Django + Stripe API бэкенд
+> Протестировать покупку товара можно по ссылке: https://payments-stripe-api.herokuapp.com/item/1/
 
 ### Задание:
 ##### Реализовать Django + Stripe API бэкенд со следующим функционалом и условиями:
@@ -35,8 +36,12 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-### Команда для запуска docker
+### Разворачиваем проект через docker
 ```bash
-docker-compose up
+docker-compose build
+docker-compose up -d
+docker-compose exec web pip install -r requirements.txt
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py createsuperuser
 ```
 
