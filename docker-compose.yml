@@ -7,7 +7,7 @@ services:
       - .:/code
     environment:
       - SECRET_KEY=%#l%d+#58)%#d1oopq3l=xf_&x+w98-t$$)p1l11nav@kdgu&2k
-      - DEBUG=True
+      - DEBUG=False
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
