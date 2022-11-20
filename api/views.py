@@ -14,7 +14,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 class BuyItemSessionView(View):
     def post(self, request, *args, **kwargs):
         price = Price.objects.get(id=self.kwargs["pk"])
-        DOMAIN = "http://127.0.0.1:8000"
+        DOMAIN = "https://sheltered-scrubland-41746.herokuapp.com/"
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[
