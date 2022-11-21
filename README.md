@@ -24,6 +24,12 @@ pip install -r requirements.txt
 
 ```bash
 SECRET_KEY=<secret_key>
+DEBUG=<debug>
+POSTGRES_NAME=<postgres_name>
+POSTGRES_USER=<postgres_user>
+POSTGRES_PASSWORD=<postgres_password>
+POSTGRES_HOST=<postgres_host>
+POSTGRES_PORT=<postgres_port>
 STRIPE_PUBLIC_KEY=<stripe_public_key>
 STRIPE_SECRET_KEY=<stripe_secret_key>
 ```
